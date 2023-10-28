@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    padding: 40px 28px;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 65px;
+    border: none;
+    background: var(--color-navy);
+    color: var(--color-background);
+    font-weight: var(--font-weight-bold);
+    line-height: 90%;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    height: 97px;
+    width: 350px;
+}

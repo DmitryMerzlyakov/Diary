@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    gap: 5px;
+    width: 410px;
+}
+
+.buttonDes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: none;
+    background: var(--color-grey);
+    padding: 20px;
+    color: var(--color-navy);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 110%;
+    height: 64px;
+}
+
+.buttonAct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: none;
+    background: var(--color-light-blue);
+    padding: 20px;
+    color: var(--color-navy);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 110%;
+    height: 64px;
+}
+
+.svg {
+    width: 15%;
+    height: 15%;
+}

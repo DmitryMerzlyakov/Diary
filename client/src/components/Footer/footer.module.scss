@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-navy);
+}
+
+.text {
+    color: var(--color-background);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.72px;
+    padding: 25px;
+}
+
+.scroll {
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+    display: inline-flex;
+    padding: 24px 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 40px;
+    background: var(--color-light-blue);
+    color: var(--color-navy);
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+
+}

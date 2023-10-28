@@ -1,0 +1,19 @@
+:root {
+  --color-background: #ffffff;
+  --color-grey: #F6F6F6;
+  --color-light-blue: #88A1DE;
+  --color-navy: #050F28;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 1920px;
+  max-height: 2226px;
+  font-family: 'Nunito', sans-serif;
+}
