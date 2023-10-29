@@ -1,5 +1,3 @@
-import { Button } from '../Button'
-
 import s from './header.module.scss'
 import logo from '../../assets/Logo.png'
 import { useAppDispatch } from '../../hooks'
@@ -14,7 +12,7 @@ const Header = () => {
 
   return (
     <header className={s.wrapper}>
-      <img src={logo} />
+      <img src={logo} className={s.logo} />
       <button className={s.button} onClick={handleOpenPopUp}>
         НАПИСАТь
       </button>

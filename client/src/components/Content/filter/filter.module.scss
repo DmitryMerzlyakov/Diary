@@ -38,3 +38,37 @@
     width: 15%;
     height: 15%;
 }
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        justify-content: flex-end
+    }
+
+    .buttonDes {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .buttonAct {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width:475px) {
+
+    .wrapper {
+        justify-content: center
+    }
+}
+
+@media (max-width:320px) {
+
+    .wrapper {
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
+}

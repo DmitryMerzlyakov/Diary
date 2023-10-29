@@ -29,3 +29,23 @@
     font-weight: var(--font-weight-bold);
 
 }
+
+
+@media (max-width:475px) {
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+
+    .text {
+        padding: 15px;
+    }
+
+    .scroll {
+        width: 95%;
+        right: 0px;
+        left: 11px;
+    }
+}

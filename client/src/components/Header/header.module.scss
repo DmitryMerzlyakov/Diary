@@ -19,3 +19,37 @@
     height: 97px;
     width: 350px;
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+        align-items: center;
+    }
+
+    .button {
+        height: 67px;
+        width: 250px;
+    }
+}
+
+@media (max-width:475px) {
+
+    .wrapper {
+        align-items: center;
+    }
+
+    .logo {
+        width: 70%;
+    }
+
+    .button {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        background-image: url('../../assets//pen.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        color: var(--color-background);
+        padding-top: 60px;
+        align-items: baseline;
+    }
+}

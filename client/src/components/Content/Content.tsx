@@ -5,7 +5,6 @@ import { useGetRepordsQuery } from '../../store/servises/api'
 import { useState, useEffect } from 'react'
 import { Repord } from '../../types'
 import { useAppSelector } from '../../hooks'
-import { setSort } from '../../store/slice/sliceForRender'
 
 import s from './content.module.scss'
 

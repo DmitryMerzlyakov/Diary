@@ -29,6 +29,7 @@
 }
 
 .form {
+    height: 80%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -91,7 +92,7 @@
 
     &__textarea {
         width: 1064px;
-        height: 166px;
+        height: 126px;
         border: none;
         border-radius: 4px;
         padding: 15px;
@@ -143,4 +144,347 @@
     width: 38px;
     height: 38px;
     font-size: 38px;
+}
+
+
+@media (max-width:1024px) {
+
+    .active {
+        width: 1024px;
+        height: 100%;
+    }
+
+
+    .disable {
+        width: 1024px;
+        height: 100%;
+    }
+
+    .form {
+        width: 884px;
+        height: 85%;
+        gap: 10px;
+        flex-shrink: 0;
+        flex-direction: column;
+        padding: 50px 40px 0 40px;
+    }
+
+    .header {
+        font-size: 32px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__input {
+            width: 825px;
+            height: 70px;
+        }
+
+        &__date {
+            width: 810px;
+            height: 70px;
+        }
+
+        &__textarea {
+            width: 825px;
+            height: 126px;
+        }
+
+        &__labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .button {
+        width: 533px;
+        height: 97px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .active {
+        width: 768px;
+        height: 100%;
+    }
+
+
+    .disable {
+        width: 768px;
+        height: 100%;
+    }
+
+    .form {
+        width: 658px;
+        height: 85%;
+        gap: 10px;
+        flex-shrink: 0;
+        flex-direction: column;
+        padding: 50px 40px 0 40px;
+    }
+
+    .header {
+        font-size: 32px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__input {
+            width: 630px;
+            height: 70px;
+        }
+
+        &__date {
+            width: 617px;
+            height: 70px;
+        }
+
+        &__textarea {
+            width: 630px;
+            height: 126px;
+        }
+
+        &__labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .button {
+        width: 403px;
+        height: 97px;
+    }
+}
+
+@media (max-width:475px) {
+
+    .active {
+        width: 425px;
+        height: 100%;
+    }
+
+
+    .disable {
+        width: 425px;
+        height: 100%;
+    }
+
+    .form {
+        width: 375px;
+        height: 90%;
+        gap: 10px;
+        flex-shrink: 0;
+        flex-direction: column;
+        padding: 30px 10px 30px 10px;
+    }
+
+    .header {
+        font-size: 32px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__input {
+            width: 345px;
+            height: 80px;
+        }
+
+        &__date {
+            width: 335px;
+            height: 80px;
+        }
+
+        &__textarea {
+            width: 345px;
+            height: 190px;
+        }
+
+        &__labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .button {
+        width: 375px;
+        height: 97px;
+    }
+}
+
+@media (max-width:375px) {
+
+    .active {
+        width: 375px;
+        height: 100%;
+    }
+
+
+    .disable {
+        width: 375px;
+        height: 100%;
+    }
+
+    .form {
+        width: 370px;
+        height: 90%;
+        gap: 15px;
+        flex-shrink: 0;
+        flex-direction: column;
+        padding: 20px 10px 20px 10px;
+    }
+
+    .header {
+        font-size: 28px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &__title {
+            font-size: 16px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__input {
+            width: 290px;
+            height: 60px;
+        }
+
+        &__date {
+            width: 277px;
+            height: 60px;
+            font-size: 14px;
+        }
+
+        &__textarea {
+            width: 290px;
+            height: 190px;
+        }
+
+        &__labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .button {
+        width: 355px;
+        height: 67px;
+    }
+}
+
+@media (max-width:320px) {
+
+    .active {
+        width: 320px;
+        height: 100%;
+    }
+
+
+    .disable {
+        width: 320px;
+        height: 100%;
+    }
+
+    .form {
+        width: 300px;
+        height: 90%;
+        gap: 15px;
+        flex-shrink: 0;
+        flex-direction: column;
+        padding: 20px 10px 20px 10px;
+    }
+
+    .header {
+        font-size: 28px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &__title {
+            font-size: 16px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &__input {
+            width: 270px;
+            height: 60px;
+        }
+
+        &__date {
+            width: 257px;
+            height: 60px;
+            font-size: 14px;
+        }
+
+        &__textarea {
+            width: 270px;
+            height: 190px;
+        }
+
+        &__labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .button {
+        width: 300px;
+        height: 67px;
+    }
 }
