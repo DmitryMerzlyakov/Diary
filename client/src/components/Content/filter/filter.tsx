@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useAppDispatch } from '../../../hooks'
+import { useAppDispatch, useAppSelector } from '../../../hooks'
 import { setSort } from '../../../store/slice/sliceForRender'
 import { useGetRepordsQuery } from '../../../store/servises/api'
 import { Repord } from '../../../types'
@@ -14,9 +14,13 @@ const Filter = () => {
   const { data } = useGetRepordsQuery('')
 
   const dispatch = useAppDispatch()
+  const sortOld = useAppSelector((state) => state.render.sortOld)
+  const sortNew = useAppSelector((state) => state.render.sortNew)
 
-  const [activeNew, setActiveNew] = useState(false)
-  const [activeOld, setActiveOld] = useState(false)
+  const [activeNew, setActiveNew] = useState<boolean>(false)
+  const [activeOld, setActiveOld] = useState<boolean>(false)
+  const [disabledOld, setDisabledOld] = useState<boolean>()
+  const [disabledNew, setDisabledNew] = useState<boolean>()
 
   // const handleSortName = () => {
   //   sortData.push(
@@ -38,16 +42,23 @@ const Filter = () => {
   // }
 
   const handleFilterNew = () => {
-    data?.sort((a: Repord, b: Repord) => (a.date > b.date ? 1 : -1))
-    dispatch(setSort({ sort: true }))
-    setActiveNew(true)
-    setActiveOld(false)
+    setActiveNew((prev: boolean) => !prev)
+    if (activeNew === true) {
+      setDisabledOld(false)
+    } else {
+      setDisabledOld(true)
+    }
+    dispatch(setSort({ sortNew: !sortNew, sortOld: false }))
   }
 
   const handleFilterOld = () => {
-    dispatch(setSort({ sort: true }))
-    setActiveOld(true)
-    setActiveNew(false)
+    setActiveOld((prev: boolean) => !prev)
+    if (activeOld === true) {
+      setDisabledNew(false)
+    } else {
+      setDisabledNew(true)
+    }
+    dispatch(setSort({ sortOld: !sortOld, sortNew: false }))
   }
 
   return (
@@ -55,6 +66,7 @@ const Filter = () => {
       <button
         className={activeNew ? s.buttonAct : s.buttonDes}
         onClick={handleFilterNew}
+        disabled={disabledNew}
       >
         {activeNew ? <img src={NewAct} /> : <img src={NewDes} />}
         Сначала новые
@@ -63,6 +75,7 @@ const Filter = () => {
       <button
         className={activeOld ? s.buttonAct : s.buttonDes}
         onClick={handleFilterOld}
+        disabled={disabledOld}
       >
         {activeOld ? <img src={OldAct} /> : <img src={OldDes} />}
         Сначала старые

@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   visible: false,
-  sort: false
+  sortOld: false,
+  sortNew: false
 }
 
 const renderSlice = createSlice({
@@ -18,7 +19,8 @@ const renderSlice = createSlice({
     setSort: (state, { payload }) => {
       return {
         ...state,
-        sort: payload.sort
+        sortOld: payload.sortOld,
+        sortNew: payload.sortNew
       }
     }
   }

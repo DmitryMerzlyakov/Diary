@@ -18,11 +18,11 @@ export const newRepord = (request, res) => {
     id: parsedData.length + 1,
     ...request.body,
   };
-  parsedData.push(newRec);
+  parsedData.unshift(newRec);
   let modData = JSON.stringify(parsedData);
   fs.writeFileSync(filePath, modData, (err) => {
     if (err) throw err;
     console.log(err);
   });
-  res.status(201).json({});
+  res.status(201).json(JSON.parse(data));
 };

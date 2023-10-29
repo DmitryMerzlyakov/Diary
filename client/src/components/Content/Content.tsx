@@ -4,18 +4,43 @@ import { Filter } from './filter'
 import { useGetRepordsQuery } from '../../store/servises/api'
 import { useState, useEffect } from 'react'
 import { Repord } from '../../types'
+import { useAppSelector } from '../../hooks'
+import { setSort } from '../../store/slice/sliceForRender'
 
 import s from './content.module.scss'
 
 const Content = () => {
   const { data, isLoading, error } = useGetRepordsQuery('')
 
-  const [container, setContainer] = useState<Repord[] | []>([])
-  const [lastItem, setLastItem] = useState(3)
+  const [container, setContainer] = useState<Repord[]>([])
+  const [repords, setRepords] = useState<Repord[]>([])
+  const [lastItem, setLastItem] = useState(6)
+
+  const sortOld = useAppSelector((state) => state.render.sortOld)
+  const sortNew = useAppSelector((state) => state.render.sortNew)
 
   useEffect(() => {
     data && !error && setContainer(data)
+    data && !error && setRepords(data)
   }, [isLoading])
+
+  useEffect(() => {
+    if (sortNew === true) {
+      const arrSort = [...container]
+      setRepords(arrSort.sort((a, b) => (a.date < b.date ? 1 : -1)))
+    } else {
+      setRepords(container)
+    }
+  }, [sortNew])
+
+  useEffect(() => {
+    if (sortOld === true) {
+      const arrSort = [...container]
+      setRepords(arrSort.sort((a, b) => (a.date > b.date ? 1 : -1)))
+    } else {
+      setRepords(container)
+    }
+  }, [sortOld])
 
   const handleShowMore = () => {
     setLastItem(lastItem * 2)
@@ -28,7 +53,7 @@ const Content = () => {
         <Filter />
       </div>
       <div className={s.content}>
-        {container.slice(0, lastItem).map((item: Repord) => (
+        {repords.slice(0, lastItem).map((item: Repord) => (
           <Item
             key={item.id}
             id={item.id}
