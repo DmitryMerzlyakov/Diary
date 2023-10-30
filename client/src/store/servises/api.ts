@@ -12,6 +12,11 @@ export const repordsApi = createApi({
         url: `/records`
       })
     }),
+    getByIdRepords: build.query<Repord[], number>({
+      query: (id: number) => ({
+        url: `/${id}`
+      })
+    }),
     addNewRepord: build.mutation({
       query: (body) => ({
         url: `/add`,
@@ -23,4 +28,8 @@ export const repordsApi = createApi({
   })
 })
 
-export const { useGetRepordsQuery, useAddNewRepordMutation } = repordsApi
+export const {
+  useGetRepordsQuery,
+  useAddNewRepordMutation,
+  useGetByIdRepordsQuery
+} = repordsApi

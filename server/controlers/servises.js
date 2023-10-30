@@ -8,8 +8,16 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, "../data/repords.json");
 let data = fs.readFileSync(filePath);
 
-export const getAll = (req, res) => {
+export const getAll = (request, res) => {
   res.status(200).json(JSON.parse(data));
+};
+
+export const getById = (request, res) => {
+  let parsedData = JSON.parse(data);
+  let id = request.params.id;
+  const repordById = parsedData.find((item) => item.id == id);
+  console.log(repordById);
+  res.status(200).json({ ...repordById });
 };
 
 export const newRepord = (request, res) => {
